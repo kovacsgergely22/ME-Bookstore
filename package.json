@@ -1,5 +1,5 @@
 {
-  "name": "driver-app",
+  "name": "bookstore-app",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
