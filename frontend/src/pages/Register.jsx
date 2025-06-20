@@ -25,11 +25,11 @@ function Register() {
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
     } 
-    // else {
-    //   // Here you would typically handle the registration logic, such as sending the data to an API
-    //   console.log("Registration successful", formData);
-    //   toast.success("Registration successful");
-    // }
+    else {
+      // Here you would typically handle the registration logic, such as sending the data to an API
+      console.log("Registration successful", formData);
+      toast.success("Registration successful");
+    }
   }
 
   return (
