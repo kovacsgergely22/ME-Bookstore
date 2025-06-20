@@ -1,0 +1,50 @@
+# Bookstore app
+
+- npm i express dotenv
+
+- https://github.com/dotenv-org
+
+- npm i -D nodemon
+
+- PORT=5000
+
+- npm run start - node server
+- npm run dev - nodemon server
+
+
+## Backend
+
+Az package.json-ban látható, hogy kétféle futtatási mód van beállítáva:
+
+```
+npm run start
+```
+
+paranccsal indítva a node server indul, az 
+
+```
+npm run server
+```
+
+nodemont használva indítja a szervert.
+
+## Frontend
+
+A frontend a frontend mappából futtatható:
+
+```
+npm run start
+```
+
+A backend és a frontend közös futtatására a concurrently npm package-t használom. A package.json fájlban látható, hogy script futtatásával működik, a következő paranccsal:
+
+```
+npm run dev
+```
+
+## .gitignore
+```
+node_modules/
+.env
+```
+
