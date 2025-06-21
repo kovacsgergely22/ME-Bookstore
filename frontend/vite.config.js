@@ -4,4 +4,14 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      // Minden /api kezdetű kérés továbbítása a backend szerverre
+      '/api': {
+        target: 'http://localhost:5000', // vagy ahol a backend fut
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })

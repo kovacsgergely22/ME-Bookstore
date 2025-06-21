@@ -6,10 +6,10 @@ function Logout() {
 
   const handleLogout = () => {
     // Itt kellene törölni a felhasználói adatokat, pl. a localStorage-ból
-    // localStorage.removeItem('user'); 
+    // localStorage.removeItem('user');
     console.log("User logged out");
     toast.success("Successfully logged out");
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -22,12 +22,16 @@ function Logout() {
       </section>
 
       <section className="form">
-        <button className="btn btn-block" onClick={handleLogout}>
-          Logout
-        </button>
+        <form>
+          <div className="form-group">
+            <button className="btn btn-block" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        </form>
       </section>
     </>
   );
 }
 
-export default Logout
+export default Logout;

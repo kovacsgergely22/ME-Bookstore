@@ -1,16 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {toast} from "react-toastify";
 import { FaUser } from "react-icons/fa";
+import {useSelector, useDispatch} from "react-redux";
+import { register, reset } from "../features/auth/authSlice";
 
 function Register() {
   const [formData, setFormData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { username, email, password, confirmPassword } = formData;
+  const { name, email, password, confirmPassword } = formData;
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const {user, isLoading, isSuccess, isError, message} = 
+  useSelector(
+    (state) => state.auth 
+);
+
+  useEffect(() => {
+
+    if (isError) {
+      toast.error(message);
+    }
+
+    // Redirect if logged in
+    if (isSuccess || user) {
+      navigate("/");
+    }
+
+    dispatch(reset());
+
+    if (message) {
+      toast.error(message);
+    }
+  }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -26,9 +55,13 @@ function Register() {
       toast.error("Passwords do not match");
     } 
     else {
+      const userData = {
+        name,
+        email,
+        password,
+      };
+      dispatch(register(userData));
       // Here you would typically handle the registration logic, such as sending the data to an API
-      console.log("Registration successful", formData);
-      toast.success("Registration successful");
     }
   }
 
@@ -46,11 +79,11 @@ function Register() {
           <div className="form-group">
             <input
               type="text"
-              id="username"
-              name="username"
-              value={username}
+              id="name"
+              name="name"
+              value={name}
               onChange={onChange}
-              placeholder="Enter your username"
+              placeholder="Enter your name"
               required
             />
           </div>
