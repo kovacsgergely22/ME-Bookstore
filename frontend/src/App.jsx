@@ -1,28 +1,32 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import {ToastContainer} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import Header from './components/Header'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Header from "./components/Header";
+import PrivateRoute from "./components/PrivateRoute";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import NewBook from "./pages/NewBook";
 
 function App() {
-
   return (
     <>
       <Router>
-        <div className='container'>
+        <div className="container">
           <Header />
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/new-book" element={<NewBook />} />
+            </Route>
           </Routes>
         </div>
       </Router>
       <ToastContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
