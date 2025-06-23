@@ -36,7 +36,7 @@ A frontend a frontend mappából futtatható:
 npm run start
 ```
 
-Frontend és Backend együtt
+## Frontend és Backend együtt
 
 A backend és a frontend közös futtatására a concurrently npm package-t használom. A package.json fájlban látható, hogy a következő paranccsal indítható:
 
@@ -50,3 +50,4 @@ node_modules/
 .env
 ```
 
+A .env fájl konfigurációs beállításokat tartalmaz. Normál esetben ezt nem kellene feltölteni a GitHubra, de fontos információkat tartalmaz, mint a port száma, a MongoDB hozzáférési linkje benne cluster hozzáférési információival.
