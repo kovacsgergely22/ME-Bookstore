@@ -36,7 +36,9 @@ A frontend a frontend mappából futtatható:
 npm run start
 ```
 
-A backend és a frontend közös futtatására a concurrently npm package-t használom. A package.json fájlban látható, hogy script futtatásával működik, a következő paranccsal:
+Frontend és Backend együtt
+
+A backend és a frontend közös futtatására a concurrently npm package-t használom. A package.json fájlban látható, hogy a következő paranccsal indítható:
 
 ```
 npm run dev
