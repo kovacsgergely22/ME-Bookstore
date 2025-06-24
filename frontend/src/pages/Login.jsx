@@ -21,8 +21,7 @@ function Login() {
     (state) => state.auth
   );
 
-    useEffect(() => {
-
+  useEffect(() => {
     if (isError) {
       toast.error(message);
     }
@@ -69,6 +68,7 @@ function Login() {
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
+              className="form-control"
               type="email"
               id="email"
               name="email"
@@ -81,6 +81,7 @@ function Login() {
 
           <div className="form-group">
             <input
+              className="form-control"
               type="password"
               id="password"
               name="password"

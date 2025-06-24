@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 
@@ -19,13 +19,11 @@ function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {user, isLoading, isSuccess, isError, message} = 
-  useSelector(
-    (state) => state.auth 
-);
+  const { user, isLoading, isSuccess, isError, message } = useSelector(
+    (state) => state.auth
+  );
 
   useEffect(() => {
-
     if (isError) {
       toast.error(message);
     }
@@ -50,8 +48,7 @@ function Register() {
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
-    } 
-    else {
+    } else {
       const userData = {
         name,
         email,
@@ -60,7 +57,7 @@ function Register() {
       dispatch(register(userData));
       // Here you would typically handle the registration logic, such as sending the data to an API
     }
-  }
+  };
 
   if (isLoading) {
     return <Spinner />;
@@ -79,6 +76,7 @@ function Register() {
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
+              className="form-control"
               type="text"
               id="name"
               name="name"
@@ -91,6 +89,7 @@ function Register() {
 
           <div className="form-group">
             <input
+              className="form-control"
               type="email"
               id="email"
               name="email"
@@ -103,6 +102,7 @@ function Register() {
 
           <div className="form-group">
             <input
+              className="form-control"
               type="password"
               id="password"
               name="password"
@@ -115,6 +115,7 @@ function Register() {
 
           <div className="form-group">
             <input
+              className="form-control"
               type="password"
               id="confirmPassword"
               name="confirmPassword"
