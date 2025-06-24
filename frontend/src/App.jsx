@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NewBook from "./pages/NewBook";
+import "./App.css"; // Assuming you have a CSS file for styles
 
 function App() {
   return (
