@@ -50,7 +50,7 @@ node_modules/
 .env
 ```
 
-A .env fájl konfigurációs beállításokat tartalmaz. Normál esetben ezt nem kellene feltölteni a GitHubra, de fontos információkat tartalmaz, mint a port száma, a MongoDB hozzáférési linkje benne cluster hozzáférési információival.
+A .env fájl konfigurációs beállításokat tartalmaz. Normál esetben ezt hozzá kell adni a .gitignore-hoz, de fontos információkat tartalmaz, mint a port száma, a MongoDB hozzáférési linkje benne cluster hozzáférési információival.
 
 ## Felhasznált tananyag
 
