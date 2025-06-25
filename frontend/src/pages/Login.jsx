@@ -5,6 +5,7 @@ import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
+import "./pages.css"; // Assuming you have a CSS file for styling
 
 function Login() {
   const [formData, setFormData] = useState({

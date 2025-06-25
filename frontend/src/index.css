@@ -126,19 +126,6 @@ button {
   width: 100%;
 }
 
-.btn-book {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  color: #1a1a1a;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 45%;
-  margin: 0 auto;
-}
-
 button:hover {
   border-color: #646cff;
 }

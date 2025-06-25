@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { createBook, reset } from "../features/books/bookSlice";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
+import "./pages.css"; // Assuming you have a CSS file for styling
 
 function NewBook() {
   const { user } = useSelector((state) => state.auth);

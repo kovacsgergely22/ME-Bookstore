@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaBook, FaBookOpen } from "react-icons/fa";
+import "./pages.css"; // Assuming you have a CSS file for styling
 
 function Home() {
   return (

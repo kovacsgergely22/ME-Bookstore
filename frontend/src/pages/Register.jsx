@@ -5,6 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
+import "./pages.css"; // Assuming you have a CSS file for styling
 
 function Register() {
   const [formData, setFormData] = useState({
