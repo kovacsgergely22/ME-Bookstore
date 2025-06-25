@@ -10,7 +10,7 @@ import "./pages.css"; // Assuming you have a CSS file for styling
 function NewBook() {
   const { user } = useSelector((state) => state.auth);
   const { isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.book
+    (state) => state.books
   );
 
   const [name] = useState(user.name);

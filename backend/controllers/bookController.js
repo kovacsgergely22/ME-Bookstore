@@ -17,7 +17,7 @@ const getBooks = asyncHandler(async (req, res) => {
 
     const books = await Book.find({ user: req.user.id });
 
-    res.status(200).json({ books });
+    res.status(200).json(books);
 });
 
 // @desc    Get user book

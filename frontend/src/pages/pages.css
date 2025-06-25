@@ -33,3 +33,59 @@
 .btn-book:hover {
     background-color: #f0f0f0;
 }
+
+.books {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.book-headings {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Date, Title, View gomb aránya */
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.book-headings > div {
+  padding: 5px;
+}
+
+.book-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Date, Title, View gomb aránya */
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  border-radius: 10px;
+  word-break: break-word; /* Szavak törése, ha túl hosszú */
+}
+
+.book-item > div {
+  padding: 5px;
+  overflow: hidden; /* Elrejtjük a túlcsorduló tartalmat */
+}
+
+.book-item > div:nth-child(2) {
+  /* Title oszlop */
+  max-width: 100%; /* Maximális szélesség beállítása */
+}
+
+/* Opcionális: Stílus a View gombnak */
+.book-item .view-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.book-item .view-button:hover {
+  background-color: #0056b3;
+}

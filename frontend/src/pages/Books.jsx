@@ -1,36 +1,52 @@
-import { use, useEffect } from "react";
-import {useSelector, useDispatch} from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { getBooks, reset } from "../features/books/bookSlice";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
+import BookItem from "../components/BookItem";
 
 function Books() {
-const { books, isLoading, isSuccess} = useSelector((state) => state.books);
+  const { books, isLoading, isSuccess } = useSelector((state) => state.books);
+  console.log(books);
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-useEffect(() => {
+  useEffect(() => {
     return () => {
-        if (isSuccess) {
-            dispatch(reset());
-        }
+      if (isSuccess) {
+        dispatch(reset());
+      }
     };
-}, [dispatch, isSuccess]);
+  }, [dispatch, isSuccess]);
 
-useEffect(() => {
+  useEffect(() => {
     dispatch(getBooks());
-}, [dispatch]);
+  }, [dispatch]);
 
-if (isLoading) {
+  if (isLoading) {
     return <Spinner />;
-}
+  }
 
-    return (
-        <div>
-        <h1>Books</h1>
-        <p>List of books will be displayed here.</p>
+  return (
+    <>
+      <BackButton url="/" />
+      <h1>My Books</h1>
+      <div className="books">
+        <div className="book-headings">
+          <div>Date</div>
+          <div>Title</div>
+          <div></div>
         </div>
-    );
+        {Array.isArray(books) ? (
+          books.map((book) => (
+            <BookItem key={book._id} book={book} />
+          ))
+        ) : (
+          <div>Nincsenek könyvek.</div>
+        )}
+      </div>
+    </>
+  );
 }
 
 export default Books;
