@@ -15,8 +15,22 @@ const createBook = async (bookData, token) => {
   return response.data;
 };
 
+// Get user books
+const getBooks = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.get(API_URL, config);
+
+  return response.data;
+};
+
 const bookService = {
   createBook,
+  getBooks,
 }
 
 export default bookService;
