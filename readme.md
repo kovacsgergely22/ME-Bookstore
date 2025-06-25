@@ -51,3 +51,8 @@ node_modules/
 ```
 
 A .env fájl konfigurációs beállításokat tartalmaz. Normál esetben ezt nem kellene feltölteni a GitHubra, de fontos információkat tartalmaz, mint a port száma, a MongoDB hozzáférési linkje benne cluster hozzáférési információival.
+
+## Felhasznált tananyag
+
+- [React Front to Back 2022 [Video]](https://subscription.packtpub.com/video/web-development/9781838645274/p1/video1_1/welcome-to-the-course)
+- [The Complete Full-Stack Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ST16MT230625B)

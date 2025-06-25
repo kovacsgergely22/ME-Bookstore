@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { getBook, reset } from "../features/books/bookSlice";
-import { useParams } from "react-router-dom";
+import { getBook, reset, deleteBook } from "../features/books/bookSlice";
+import { useParams, useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 
@@ -13,6 +13,7 @@ function Book() {
 
   const params = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { bookId } = useParams();
 
   useEffect(() => {
@@ -23,6 +24,12 @@ function Book() {
     dispatch(getBook(bookId));
     // eslint-disable-next-line
   }, [isError, message, bookId]);
+
+  const onDeleteBook = () => {
+    dispatch(deleteBook(bookId));
+    toast.success("Book Deleted");
+    navigate("/books");
+  };
 
   if (isLoading) {
     return <Spinner />;
@@ -52,6 +59,9 @@ function Book() {
         <h3>Publisher: {book?.publisher}</h3>
         <h3>Year: {book?.year}</h3>
         <h3>Is Favorite: {book?.isFavorite ? "Yes" : "No"}</h3>
+        <button className="btn btn-danger" onClick={onDeleteBook}>
+          Delete Book
+        </button>
       </div>
     </div>
   );
