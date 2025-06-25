@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NewBook from "./pages/NewBook";
 import Books from "./pages/Books";
+import Book from "./pages/Book";
 
 import "./App.css"; // Assuming you have a CSS file for styles
 
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route element={<PrivateRoute />}>
               <Route path="/books" element={<Books />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+              <Route path="/book/:bookId" element={<Book />} />
             </Route>
           </Routes>
         </div>

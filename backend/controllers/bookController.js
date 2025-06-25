@@ -44,7 +44,7 @@ const getBook = asyncHandler(async (req, res) => {
         throw new Error('User not authorized to view this book');
     }
 
-    res.status(200).json({ book });
+    res.status(200).json(book);
 });
 
 // @desc    Create new books

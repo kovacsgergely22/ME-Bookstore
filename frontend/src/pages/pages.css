@@ -89,3 +89,38 @@
 .book-item .view-button:hover {
   background-color: #0056b3;
 }
+
+.book-page {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.ticket-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.ticket-header h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.ticket-header h3 {
+  color: #666;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.book-details {
+  margin-top: 20px;
+}
+
+.book-details h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
