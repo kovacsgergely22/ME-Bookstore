@@ -15,7 +15,7 @@ function NewBook() {
 
   const [name] = useState(user.name);
   const [email] = useState(user.email);
-  const [category, setCategory] = useState("Cybersecurity");
+  const [category, setCategory] = useState("Other");
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [publisher, setPublisher] = useState("");
