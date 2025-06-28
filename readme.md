@@ -58,11 +58,13 @@ A .env fájl konfigurációs beállításokat tartalmaz. Normál esetben ezt hoz
 
 Ez egy MERN projekt, a képen látható módon épül fel (MERN: MongoDB - adatbázis, Express - backend keretrendszer, React - frontend keretrendszer, Node JS - JavaScript futtatókörnyezet eszközök kezdőbetűjének rövidítéséből):
 
-![MERN](src/MERN.png)
+![MERN](src/MERN.png) [~1]
 
 - A MongoDB-t a Mongoose-on keresztül érjük el, ez egy Object Data Mapper sok könnyen használható függvénnyel, ami segít az adatbázishoz való csatlakozásban, és a műveletek elvégzésében, az Expressen keresztül.
 - Felhasznált eszköz még a React frontendhez a Redux a Redux Toolkittel együtt, amely egy állapotkezelő, lehető teszi állapotok megjelenítését és kezelését.
 - A Postman segítségével történt a backend tesztelése.
+
+[1]: A kép a React Front to Back kurzusból származik
 
 ### 1. MongoDB beállítása
 
@@ -187,7 +189,7 @@ npm create vite@latest my-react-app --template react
 ```
 
 A telepítéskor a React frameworköt és a JavaScript variant-ot választottam.
-Majd a frontend mappába lépve az `npm install` segítségével telepítettem a node modulokat.[~1]
+Majd a frontend mappába lépve az `npm install` segítségével telepítettem a node modulokat.[~2]
 
 ![frontendpackage](src/frontendpackage.png)
 
@@ -228,7 +230,7 @@ A következő importokra van szükség hozzá:
 
 ![headerimports](src/headerimports.png)
 
-[1]: The Complete Full-Stack Web Development Bootcamp
+[2]: The Complete Full-Stack Web Development Bootcamp
 
 ### 2. Home, Login és Regisztrációs űrlapok létrehozása, felhasználói felület
 
