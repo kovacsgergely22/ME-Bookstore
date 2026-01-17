@@ -1,5 +1,15 @@
 # Bookstore app
 
+## Telepítés
+
+npm i
+
+a backend és a frontend mappában is
+
+## Összetevők
+
+Az alábbi összetevők már nem igényelnek külön telepítést, a package.json-ban szerepelnek, így az alkalmazás repositoryból történő klónozása után nincs szükség újra telepíteni ezeket. A következőkben csak néhány összetevőt és annak telepítési módját mutatom (ha újonnan kell telepíteni az npm-mel).
+
 - npm i express dotenv
 
 - https://github.com/dotenv-org
